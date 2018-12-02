@@ -19,3 +19,7 @@ button:disabled {
 	font-weight: bold;
 	color: red;
 }
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
