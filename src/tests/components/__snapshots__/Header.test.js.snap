@@ -8,7 +8,6 @@ exports[`should render Header correctly 1`] = `
   <nav>
     <ul>
       <li>
-         
         <NavLink
           activeClassName="is-active"
           aria-current="page"
@@ -17,10 +16,8 @@ exports[`should render Header correctly 1`] = `
         >
           Dashboard
         </NavLink>
-         
       </li>
       <li>
-         
         <NavLink
           activeClassName="is-active"
           aria-current="page"
@@ -28,7 +25,6 @@ exports[`should render Header correctly 1`] = `
         >
           Create Expense
         </NavLink>
-         
       </li>
     </ul>
   </nav>
