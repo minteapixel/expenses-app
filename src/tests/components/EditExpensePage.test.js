@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { EditExpensePage } from '../../components/EditExpensePage';
+import ConfirmRemoveModal from '../../components/ConfirmRemoveModal';
 import expenses from '../fixtures/expenses';
 
 let startEditExpense, startRemoveExpense, wrapper, history;
@@ -34,11 +35,31 @@ test('should handle editExpense', () => {
 });
 
 
+test('should open modal on handleOpenModal', () => {
+	const showModal = true;
+	wrapper.find('.login-button--warning').simulate('click');
+	expect(wrapper.state('showModal')).toEqual(showModal);
+});
+
 // should handle removeExpense -- use spies
-test('should handle removeExpense', () => {
-	wrapper.find('button').simulate('click');
-	expect(history.push).toHaveBeenLastCalledWith('/');
+test('should handle removeExpense using modal', () => {
+	wrapper.instance().onRemove();
 	expect(startRemoveExpense).toHaveBeenLastCalledWith({
 		id: expenses[2].id
 	});
+	expect(history.push).toHaveBeenLastCalledWith('/');
 });
+
+test('should handle handleCloseModal', () => {
+	wrapper.instance().handleCloseModal();
+	expect(wrapper.state('showModal')).toBe(false);
+});
+
+// should handle removeExpense (before modal)-- use spies
+// test('should handle removeExpense', () => {
+	// wrapper.find('button').simulate('click');
+	// expect(history.push).toHaveBeenLastCalledWith('/');
+	// expect(startRemoveExpense).toHaveBeenLastCalledWith({
+	// 	id: expenses[2].id
+	// });
+// });

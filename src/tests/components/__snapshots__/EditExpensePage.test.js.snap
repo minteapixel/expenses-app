@@ -31,11 +31,17 @@ exports[`should render EditExpensePage 1`] = `
       onSubmit={[Function]}
     />
     <button
-      className="login-button login-button--secondary"
+      className="login-button login-button--warning"
       onClick={[Function]}
     >
       Remove Expense
     </button>
   </div>
+  <ConfirmRemoveModal
+    description="Credit Card"
+    handleCloseModal={[Function]}
+    onRemove={[Function]}
+    showModal={false}
+  />
 </div>
 `;

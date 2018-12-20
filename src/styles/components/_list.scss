@@ -1,8 +1,8 @@
 .list-header {
-	background: $light-grey;
-	border: 1px solid darken($light-grey, 10%);
+	background: $purple;
+	border: 1px solid $purple;
 	border-radius: 6px 6px 0 0;
-	color: $grey;
+	color: $white;
 	display: flex;
 	justify-content: space-between;
 	padding: $s-size $m-size;
@@ -24,8 +24,11 @@
 	padding: $s-size;
 	text-decoration: none;
 	transition: background .3s ease;
+	&:nth-child(even) {
+		background-color: $light-grey;
+	}
 	&:hover {
-		background: $light-grey;
+		background: $light-orange;
 	}
 	@media (min-width: $desktop-breakpoint){
 		align-items: center;

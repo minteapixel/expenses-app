@@ -18,3 +18,8 @@
 .login-button--secondary {
 	background: #888;
 }
+
+.login-button--warning {
+	background: $orange;
+	color: $white;
+}
